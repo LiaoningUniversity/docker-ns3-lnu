@@ -40,7 +40,7 @@ RUN apt-fast -y install mercurial git cvs
 #RUN apt-fast update && apt-fast -y install ubuntu-restricted-extras
 RUN apt-fast -y install bzr cmake unzip unrar-free p7zip-full
 RUN apt-fast -y install qt4-qmake qt4-dev-tools python-dev python-pygoocanvas python-pygraphviz
-RUN cd /tmp && wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py && python get-pip.py
+RUN cd /tmp && wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py
 #RUN pip install -e "bzr+https://code.launchpad.net/~gjc/pybindgen/trunk#egg=pybindgen"
 RUN apt-fast -y install gccxml python-pygccxml
 #http://www.nsnam.org/wiki/NetAnim
