@@ -53,15 +53,17 @@ RUN apt-fast install -y aptitude
 #RUN apt-fast update && fakeroot apt-fast install -y crypto++
 RUN apt-fast install -y checkinstall libpcap-dev
 #RUN apt-fast install astyle
+#ADD BY DONGBO
+RUN apt-get update
 
 #ns3
 RUN cd && mkdir workspace && cd workspace && hg clone http://code.nsnam.org/bake
-RUN cd /workspace/bake && ./bake.py configure -e ns-allinone-3.20
-RUN cd /workspace/bake && ./bake.py check
-RUN cd /workspace/bake && ./bake.py download
-RUN cd /workspace/bake && ./bake.py build -vvv
-RUN cd /workspace/bake/source/ns-3.20 && ./test.py -c core
-RUN cd /workspace/bake/source/ns-3.20 && ./waf --run hello-simulator
+RUN cd ~/workspace/bake && ./bake.py configure -e ns-allinone-3.20
+RUN cd ~/workspace/bake && ./bake.py check
+RUN cd ~/workspace/bake && ./bake.py download
+RUN cd ~/workspace/bake && ./bake.py build -vvv
+RUN cd ~/workspace/bake/source/ns-3.20 && ./test.py -c core
+RUN cd ~/workspace/bake/source/ns-3.20 && ./waf --run hello-simulator
 
 #project setup
 ADD wscript.dc /wscript.dc
